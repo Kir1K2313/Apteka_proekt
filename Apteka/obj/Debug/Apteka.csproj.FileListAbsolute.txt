@@ -1,0 +1,12 @@
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\Apteka.exe.config
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\Apteka.exe
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\Apteka.pdb
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.AssemblyReference.cache
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.SuggestedBindingRedirects.cache
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.MainForm.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.MainUserControl.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.Properties.Resources.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.GenerateResource.cache
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.CoreCompileInputs.cache
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.exe
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.pdb

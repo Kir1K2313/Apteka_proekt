@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace Apteka
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+
+            Text = "Аптека";
+
+            MainUserControl mauc = new MainUserControl();
+            mauc.Dock = DockStyle.Fill;
+            Infopanel.Controls.Clear();
+            Infopanel.Controls.Add(mauc);
         }
+
+  
     }
 }
