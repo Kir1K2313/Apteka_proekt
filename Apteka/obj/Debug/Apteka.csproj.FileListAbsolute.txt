@@ -10,3 +10,11 @@ D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.CoreCompileInputs.cache
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.exe
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.pdb
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.AptekaUserControl.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\EntityFramework.dll
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\EntityFramework.SqlServer.dll
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\EntityFramework.xml
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\EntityFramework.SqlServer.xml
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\ru\EntityFramework.resources.dll
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.MedikamenUserControl.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.CopyComplete
