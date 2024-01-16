@@ -24,14 +24,6 @@ namespace Apteka
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MainUserControl mauc = new MainUserControl();
-            Controls.Clear();
-            Controls.Add(mauc);
-            mauc.Dock = DockStyle.None;
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
         }

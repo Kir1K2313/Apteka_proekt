@@ -25,5 +25,14 @@ namespace Apteka
             Controls.Add(aptekaUc);
             aptekaUc.Dock = DockStyle.None;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            AptekaUserControl aptekaUc = new AptekaUserControl(pb.Tag.ToString());
+            Controls.Clear();
+            Controls.Add(aptekaUc);
+            aptekaUc.Dock = DockStyle.None;
+        }
     }
 }
