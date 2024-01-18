@@ -18,3 +18,4 @@ D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\Entity
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\ru\EntityFramework.resources.dll
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.MedikamenUserControl.resources
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.CopyComplete
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\MySql.Data.dll

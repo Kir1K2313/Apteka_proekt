@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace Apteka
 {
@@ -53,6 +55,7 @@ namespace Apteka
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            List<string> apteki = SQLClass.myselect("Select ID, name FROM lvl 1 ");
 
         }
     }
