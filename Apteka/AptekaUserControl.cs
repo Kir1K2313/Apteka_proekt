@@ -16,7 +16,11 @@ namespace Apteka
         {
             InitializeComponent();
 
-            pictureBox1.Load("../../Картинки/Аптека" + id + ".jpg");
+            try
+            {
+                pictureBox1.Load("../../Картинки/Аптека" + id + ".jpg");
+            }
+            catch (Exception) { }
         }
 
         private void AptekaUserControl_Load(object sender, EventArgs e)

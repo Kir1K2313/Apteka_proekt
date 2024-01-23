@@ -15,7 +15,12 @@ namespace Apteka
         public MedikamenUserControl(string id)
         {
             InitializeComponent();
-            pictureBox1.Load("../../Картинки/" + id + ".jpg");
+
+            try
+            {
+                pictureBox1.Load("../../Картинки/" + id + ".jpg");
+            }
+            catch (Exception) { }
 
         }
 

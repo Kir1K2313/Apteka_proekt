@@ -55,8 +55,41 @@ namespace Apteka
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            List<string> apteki = SQLClass.myselect("Select ID, name FROM lvl 1 ");
+            string id_apteka;
+            string id_classif;
 
+            List<string> apteki = SQLClass.myselect("Select ID, name FROM lvl1 ");
+
+            for(int i = 0; i<apteki.Count; i += 2)
+            {
+                id_apteka = apteki[i];
+                TreeNode node0 = new TreeNode(apteki[i + 1]);
+                node0.Tag = apteki[i];
+                treeView1.Nodes[0].Nodes.Add(node0);
+
+                List<string> classif = SQLClass.myselect("Select ID, name FROM lvl2 WHERE ID_APTEKA = '" + id_apteka + "'");
+                for (int j = 0; j < classif.Count; j += 2)
+                {
+                    id_classif = classif[j];
+                    TreeNode node1 = new TreeNode(classif[j + 1]);
+                    node1.Tag = classif[j];
+                    node0.Nodes.Add(node1);
+
+                    List<string> meduc = SQLClass.myselect("Select ID, name FROM lvl3 WHERE ID_CLASS = '" + id_classif + "'");
+
+                    for(int g=0; g< meduc.Count; g += 2)
+                    {
+                        TreeNode node2 = new TreeNode(meduc[g + 1]);
+                        node2.Tag = meduc[g];
+                        node1.Nodes.Add(node2);
+
+                    }
+
+                }
+            }
+           
+
+            
         }
     }
 }
