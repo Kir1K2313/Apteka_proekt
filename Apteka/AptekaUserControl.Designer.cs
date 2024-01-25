@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.infopanel = new System.Windows.Forms.Panel();
+            this.Vievpanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.infopanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(441, 141);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 43);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(344, 240);
@@ -46,74 +46,58 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(942, 276);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 29);
-            this.label4.TabIndex = 7;
-            this.label4.Tag = "3";
-            this.label4.Text = "3) Таблетки";
-            this.label4.Click += new System.EventHandler(this.label6_Click_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(942, 231);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 29);
-            this.label5.TabIndex = 6;
-            this.label5.Tag = "2";
-            this.label5.Text = "2) Мази";
-            this.label5.Click += new System.EventHandler(this.label6_Click_1);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(942, 190);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(188, 29);
-            this.label6.TabIndex = 5;
-            this.label6.Tag = "1";
-            this.label6.Text = "1) Антибиотики";
-            this.label6.Click += new System.EventHandler(this.label6_Click_1);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(436, 88);
+            this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 29);
             this.label1.TabIndex = 8;
             this.label1.Text = "Аптека";
             // 
+            // infopanel
+            // 
+            this.infopanel.Controls.Add(this.pictureBox1);
+            this.infopanel.Controls.Add(this.label1);
+            this.infopanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.infopanel.Location = new System.Drawing.Point(0, 0);
+            this.infopanel.Name = "infopanel";
+            this.infopanel.Size = new System.Drawing.Size(1302, 314);
+            this.infopanel.TabIndex = 9;
+            // 
+            // Vievpanel
+            // 
+            this.Vievpanel.AutoScroll = true;
+            this.Vievpanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Vievpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Vievpanel.Location = new System.Drawing.Point(0, 314);
+            this.Vievpanel.Name = "Vievpanel";
+            this.Vievpanel.Size = new System.Drawing.Size(1302, 373);
+            this.Vievpanel.TabIndex = 10;
+            // 
             // AptekaUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Vievpanel);
+            this.Controls.Add(this.infopanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AptekaUserControl";
             this.Size = new System.Drawing.Size(1302, 687);
             this.Load += new System.EventHandler(this.AptekaUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.infopanel.ResumeLayout(false);
+            this.infopanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel infopanel;
+        private System.Windows.Forms.Panel Vievpanel;
     }
 }

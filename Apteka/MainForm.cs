@@ -46,6 +46,15 @@ namespace Apteka
 
             else if (e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Аптеки")
             {
+                ClasificatsiaUserControl cluc = new ClasificatsiaUserControl(e.Node.Tag.ToString());
+                cluc.Dock = DockStyle.Fill;
+                Infopanel.Controls.Clear();
+                Infopanel.Controls.Add(cluc);
+            }
+
+
+            else if (e.Node.Level == 3 && e.Node.Parent.Parent.Parent.Text == "Аптеки")
+            {
                 MedikamenUserControl medUc = new MedikamenUserControl(e.Node.Tag.ToString());
                 medUc.Dock = DockStyle.Fill;
                 Infopanel.Controls.Clear();

@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Антибиотики");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Мази");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Таблетки");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Аптека Апрель", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Аптеки", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Аптеки");
             this.Authpanel = new System.Windows.Forms.Panel();
             this.CopyRightpanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -92,29 +84,17 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Узел6";
-            treeNode1.Tag = "1";
-            treeNode1.Text = "Антибиотики";
-            treeNode2.Name = "Узел7";
-            treeNode2.Tag = "2";
-            treeNode2.Text = "Мази";
-            treeNode3.Name = "Узел8";
-            treeNode3.Tag = "3";
-            treeNode3.Text = "Таблетки";
-            treeNode4.Name = "Узел1";
-            treeNode4.Tag = "1";
-            treeNode4.Text = "Аптека Апрель";
-            treeNode5.Name = "Аптеки";
-            treeNode5.Text = "Аптеки";
+            treeNode1.Name = "Аптеки";
+            treeNode1.Text = "Аптеки";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode1});
             this.treeView1.Size = new System.Drawing.Size(282, 428);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 627);
             this.Controls.Add(this.tableLayoutPanel1);

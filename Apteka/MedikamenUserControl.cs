@@ -16,15 +16,24 @@ namespace Apteka
         {
             InitializeComponent();
 
+
+            List<string> meduc = SQLClass.myselect("Select ID, name, pic FROM lvl3 WHERE ID = '" + id + "'");
+
+            meduclabel.Text = meduc[1];
             try
             {
-                pictureBox1.Load("../../Картинки/" + id + ".jpg");
+                pictureBox1.Load("../../Картинки/" + meduc[2]);
             }
             catch (Exception) { }
 
         }
 
         private void MedikamenUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace Apteka
 {
-    partial class MedikamenUserControl
+    partial class ClasificatsiaUserControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.meduclabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(261, 199);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 310);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // meduclabel
             // 
             this.meduclabel.AutoSize = true;
-            this.meduclabel.Location = new System.Drawing.Point(469, 154);
-            this.meduclabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.meduclabel.Location = new System.Drawing.Point(153, 56);
+            this.meduclabel.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.meduclabel.Name = "meduclabel";
             this.meduclabel.Size = new System.Drawing.Size(79, 29);
-            this.meduclabel.TabIndex = 1;
+            this.meduclabel.TabIndex = 3;
             this.meduclabel.Text = "label1";
             // 
-            // MedikamenUserControl
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(158, 94);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(577, 332);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ClasificatsiaUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -61,9 +61,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Name = "MedikamenUserControl";
-            this.Size = new System.Drawing.Size(1717, 883);
-            this.Load += new System.EventHandler(this.MedikamenUserControl_Load);
+            this.Name = "ClasificatsiaUserControl";
+            this.Size = new System.Drawing.Size(1172, 854);
+            this.Load += new System.EventHandler(this.ClasificatsiaUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -72,7 +72,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label meduclabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
