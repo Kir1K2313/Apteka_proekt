@@ -28,23 +28,23 @@ namespace Apteka
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if(e.Node.Level == 0 && e.Node.Text == "Аптеки")
+
+           if (e.Node.Level == 0 && e.Node.Text == "Аптеки")
             {
-                MainUserControl mauc = new MainUserControl();
-                mauc.Dock = DockStyle.Fill;
+                MainUserControl main = new MainUserControl();
+                main.Dock = DockStyle.Fill;
                 Infopanel.Controls.Clear();
-                Infopanel.Controls.Add(mauc);
+                Infopanel.Controls.Add(main);
+            }
+            else  if (e.Node.Level == 1 && e.Node.Parent.Text == "Аптеки")
+            {
+                AptekaUserControl apteka = new AptekaUserControl(e.Node.Tag.ToString());
+                apteka.Dock = DockStyle.Fill;
+                Infopanel.Controls.Clear();
+                Infopanel.Controls.Add(apteka);
             }
 
-            else if(e.Node.Level == 1 && e.Node.Parent.Text == "Аптеки")
-            {
-                AptekaUserControl aptekaUc = new AptekaUserControl(e.Node.Tag.ToString());
-                aptekaUc.Dock = DockStyle.Fill;
-                Infopanel.Controls.Clear();
-                Infopanel.Controls.Add(aptekaUc);
-            }
-
-            else if (e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Аптеки")
+            else if(e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Аптеки")
             {
                 ClasificatsiaUserControl cluc = new ClasificatsiaUserControl(e.Node.Tag.ToString());
                 cluc.Dock = DockStyle.Fill;
@@ -52,14 +52,16 @@ namespace Apteka
                 Infopanel.Controls.Add(cluc);
             }
 
-
             else if (e.Node.Level == 3 && e.Node.Parent.Parent.Parent.Text == "Аптеки")
             {
-                MedikamenUserControl medUc = new MedikamenUserControl(e.Node.Tag.ToString());
-                medUc.Dock = DockStyle.Fill;
+                MedikamenUserControl meduc = new MedikamenUserControl(e.Node.Tag.ToString());
+                meduc.Dock = DockStyle.Fill;
                 Infopanel.Controls.Clear();
-                Infopanel.Controls.Add(medUc);
+                Infopanel.Controls.Add(meduc);
             }
+
+
+  
         }
 
         private void MainForm_Load(object sender, EventArgs e)

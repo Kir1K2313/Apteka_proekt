@@ -35,8 +35,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(261, 199);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(72, 52);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(500, 310);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -46,7 +46,7 @@
             // meduclabel
             // 
             this.meduclabel.AutoSize = true;
-            this.meduclabel.Location = new System.Drawing.Point(469, 154);
+            this.meduclabel.Location = new System.Drawing.Point(141, 18);
             this.meduclabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.meduclabel.Name = "meduclabel";
             this.meduclabel.Size = new System.Drawing.Size(79, 29);
@@ -60,7 +60,7 @@
             this.Controls.Add(this.meduclabel);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MedikamenUserControl";
             this.Size = new System.Drawing.Size(1717, 883);
             this.Load += new System.EventHandler(this.MedikamenUserControl_Load);

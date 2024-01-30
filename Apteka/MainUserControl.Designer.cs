@@ -48,7 +48,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "treeView1_AfterSelect";
+            this.pictureBox1.Tag = "1";
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
@@ -58,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(33, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 31);
+            this.label1.Size = new System.Drawing.Size(125, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Аптеки";
             // 
@@ -68,7 +68,7 @@
             this.label2.Location = new System.Drawing.Point(123, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 24);
+            this.label2.Size = new System.Drawing.Size(134, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Аптека №1";
             // 
@@ -82,7 +82,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "treeView1_AfterSelect";
+            this.pictureBox2.Tag = "2";
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label3
@@ -91,13 +91,13 @@
             this.label3.Location = new System.Drawing.Point(585, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 24);
+            this.label3.Size = new System.Drawing.Size(134, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Аптека №2";
             // 
             // MainUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.Controls.Add(this.label3);
