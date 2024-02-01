@@ -30,7 +30,7 @@ namespace Apteka
             List<string> classif = SQLClass.myselect("Select ID, name, pic FROM lvl2 WHERE ID_APTEKA = '" + id + "'");
 
             int x = 400;
-            int x1 = 10;
+
             for(int i=0; i<classif.Count; i+=3)
             {
                 Label lbl = new Label();
@@ -48,14 +48,14 @@ namespace Apteka
                     pb.Load("../../Pictures/" + classif[i + 2]);
                 }
                 catch (Exception) { }
-                pb.Location = new Point(x1, 93);
+                pb.Location = new Point(x, 93);
                 pb.Size = new Size(344, 240);
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
                 pb.Tag = classif[i];
                 pb.Click += new EventHandler(Picture_Click_1);
                 infopanel.Controls.Add(pb);
 
-                x += 110;
+                x += 210;
             }
 
         }
@@ -84,6 +84,11 @@ namespace Apteka
             Controls.Clear();
             Controls.Add(cluc);
             cluc.Dock = DockStyle.None;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

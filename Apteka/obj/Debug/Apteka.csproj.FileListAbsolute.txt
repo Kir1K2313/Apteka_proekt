@@ -20,3 +20,5 @@ D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.csproj.CopyComplete
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\MySql.Data.dll
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.ClasificatsiaUserControl.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.AdminUserControl.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.RegForm.resources
