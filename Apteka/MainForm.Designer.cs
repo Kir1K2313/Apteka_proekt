@@ -29,22 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Аптеки");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Админка");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Аптеки");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Админка");
             this.Authpanel = new System.Windows.Forms.Panel();
+            this.Regbutton = new System.Windows.Forms.Button();
+            this.Hellolabel = new System.Windows.Forms.Label();
+            this.Adminbutton = new System.Windows.Forms.Button();
+            this.Authbutton = new System.Windows.Forms.Button();
+            this.PasstextBox = new System.Windows.Forms.TextBox();
+            this.Passlabel = new System.Windows.Forms.Label();
+            this.LogintextBox = new System.Windows.Forms.TextBox();
+            this.Loginlabel = new System.Windows.Forms.Label();
             this.CopyRightpanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Infopanel = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.Loginlabel = new System.Windows.Forms.Label();
-            this.LogintextBox = new System.Windows.Forms.TextBox();
-            this.PasstextBox = new System.Windows.Forms.TextBox();
-            this.Passlabel = new System.Windows.Forms.Label();
-            this.Authbutton = new System.Windows.Forms.Button();
-            this.Adminbutton = new System.Windows.Forms.Button();
-            this.Hellolabel = new System.Windows.Forms.Label();
-            this.Regbutton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Designbutton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.Authpanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +55,7 @@
             // Authpanel
             // 
             this.Authpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Authpanel.Controls.Add(this.Designbutton);
             this.Authpanel.Controls.Add(this.Regbutton);
             this.Authpanel.Controls.Add(this.Hellolabel);
             this.Authpanel.Controls.Add(this.Adminbutton);
@@ -67,6 +71,76 @@
             this.Authpanel.Size = new System.Drawing.Size(1461, 105);
             this.Authpanel.TabIndex = 0;
             this.Authpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Authpanel_Paint);
+            // 
+            // Regbutton
+            // 
+            this.Regbutton.Location = new System.Drawing.Point(1026, 27);
+            this.Regbutton.Name = "Regbutton";
+            this.Regbutton.Size = new System.Drawing.Size(180, 51);
+            this.Regbutton.TabIndex = 7;
+            this.Regbutton.Text = "Регистрация";
+            this.Regbutton.UseVisualStyleBackColor = true;
+            // 
+            // Hellolabel
+            // 
+            this.Hellolabel.AutoSize = true;
+            this.Hellolabel.Location = new System.Drawing.Point(17, 24);
+            this.Hellolabel.Name = "Hellolabel";
+            this.Hellolabel.Size = new System.Drawing.Size(0, 29);
+            this.Hellolabel.TabIndex = 6;
+            // 
+            // Adminbutton
+            // 
+            this.Adminbutton.Location = new System.Drawing.Point(842, 12);
+            this.Adminbutton.Name = "Adminbutton";
+            this.Adminbutton.Size = new System.Drawing.Size(164, 74);
+            this.Adminbutton.TabIndex = 5;
+            this.Adminbutton.Text = "Панель админа";
+            this.Adminbutton.UseVisualStyleBackColor = true;
+            this.Adminbutton.Click += new System.EventHandler(this.Adminbutton_Click);
+            // 
+            // Authbutton
+            // 
+            this.Authbutton.Location = new System.Drawing.Point(660, 35);
+            this.Authbutton.Name = "Authbutton";
+            this.Authbutton.Size = new System.Drawing.Size(159, 38);
+            this.Authbutton.TabIndex = 4;
+            this.Authbutton.Text = "Войти";
+            this.Authbutton.UseVisualStyleBackColor = true;
+            this.Authbutton.Click += new System.EventHandler(this.Authbutton_Click);
+            // 
+            // PasstextBox
+            // 
+            this.PasstextBox.Location = new System.Drawing.Point(431, 35);
+            this.PasstextBox.Name = "PasstextBox";
+            this.PasstextBox.PasswordChar = '*';
+            this.PasstextBox.Size = new System.Drawing.Size(198, 34);
+            this.PasstextBox.TabIndex = 3;
+            // 
+            // Passlabel
+            // 
+            this.Passlabel.AutoSize = true;
+            this.Passlabel.Location = new System.Drawing.Point(329, 35);
+            this.Passlabel.Name = "Passlabel";
+            this.Passlabel.Size = new System.Drawing.Size(96, 29);
+            this.Passlabel.TabIndex = 2;
+            this.Passlabel.Text = "Пароль";
+            // 
+            // LogintextBox
+            // 
+            this.LogintextBox.Location = new System.Drawing.Point(113, 35);
+            this.LogintextBox.Name = "LogintextBox";
+            this.LogintextBox.Size = new System.Drawing.Size(198, 34);
+            this.LogintextBox.TabIndex = 1;
+            // 
+            // Loginlabel
+            // 
+            this.Loginlabel.AutoSize = true;
+            this.Loginlabel.Location = new System.Drawing.Point(14, 35);
+            this.Loginlabel.Name = "Loginlabel";
+            this.Loginlabel.Size = new System.Drawing.Size(82, 29);
+            this.Loginlabel.TabIndex = 0;
+            this.Loginlabel.Text = "Логин";
             // 
             // CopyRightpanel
             // 
@@ -105,91 +179,31 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode5.Name = "Аптеки";
-            treeNode5.Text = "Аптеки";
-            treeNode6.Name = "Узел0";
-            treeNode6.Text = "Админка";
+            treeNode1.Name = "Аптеки";
+            treeNode1.Text = "Аптеки";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Админка";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
+            treeNode1,
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(282, 428);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // Loginlabel
-            // 
-            this.Loginlabel.AutoSize = true;
-            this.Loginlabel.Location = new System.Drawing.Point(14, 35);
-            this.Loginlabel.Name = "Loginlabel";
-            this.Loginlabel.Size = new System.Drawing.Size(82, 29);
-            this.Loginlabel.TabIndex = 0;
-            this.Loginlabel.Text = "Логин";
-            // 
-            // LogintextBox
-            // 
-            this.LogintextBox.Location = new System.Drawing.Point(113, 35);
-            this.LogintextBox.Name = "LogintextBox";
-            this.LogintextBox.Size = new System.Drawing.Size(198, 34);
-            this.LogintextBox.TabIndex = 1;
-            // 
-            // PasstextBox
-            // 
-            this.PasstextBox.Location = new System.Drawing.Point(431, 35);
-            this.PasstextBox.Name = "PasstextBox";
-            this.PasstextBox.PasswordChar = '*';
-            this.PasstextBox.Size = new System.Drawing.Size(198, 34);
-            this.PasstextBox.TabIndex = 3;
-            // 
-            // Passlabel
-            // 
-            this.Passlabel.AutoSize = true;
-            this.Passlabel.Location = new System.Drawing.Point(329, 35);
-            this.Passlabel.Name = "Passlabel";
-            this.Passlabel.Size = new System.Drawing.Size(96, 29);
-            this.Passlabel.TabIndex = 2;
-            this.Passlabel.Text = "Пароль";
-            // 
-            // Authbutton
-            // 
-            this.Authbutton.Location = new System.Drawing.Point(660, 35);
-            this.Authbutton.Name = "Authbutton";
-            this.Authbutton.Size = new System.Drawing.Size(159, 38);
-            this.Authbutton.TabIndex = 4;
-            this.Authbutton.Text = "Войти";
-            this.Authbutton.UseVisualStyleBackColor = true;
-            this.Authbutton.Click += new System.EventHandler(this.Authbutton_Click);
-            // 
-            // Adminbutton
-            // 
-            this.Adminbutton.Location = new System.Drawing.Point(842, 12);
-            this.Adminbutton.Name = "Adminbutton";
-            this.Adminbutton.Size = new System.Drawing.Size(164, 74);
-            this.Adminbutton.TabIndex = 5;
-            this.Adminbutton.Text = "Панель админа";
-            this.Adminbutton.UseVisualStyleBackColor = true;
-            this.Adminbutton.Click += new System.EventHandler(this.Adminbutton_Click);
-            // 
-            // Hellolabel
-            // 
-            this.Hellolabel.AutoSize = true;
-            this.Hellolabel.Location = new System.Drawing.Point(17, 24);
-            this.Hellolabel.Name = "Hellolabel";
-            this.Hellolabel.Size = new System.Drawing.Size(0, 29);
-            this.Hellolabel.TabIndex = 6;
-            // 
-            // Regbutton
-            // 
-            this.Regbutton.Location = new System.Drawing.Point(1026, 27);
-            this.Regbutton.Name = "Regbutton";
-            this.Regbutton.Size = new System.Drawing.Size(180, 51);
-            this.Regbutton.TabIndex = 7;
-            this.Regbutton.Text = "Регистрация";
-            this.Regbutton.UseVisualStyleBackColor = true;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Designbutton
+            // 
+            this.Designbutton.Location = new System.Drawing.Point(1252, 17);
+            this.Designbutton.Name = "Designbutton";
+            this.Designbutton.Size = new System.Drawing.Size(136, 56);
+            this.Designbutton.TabIndex = 8;
+            this.Designbutton.Text = "Дизайн";
+            this.Designbutton.UseVisualStyleBackColor = true;
+            this.Designbutton.Click += new System.EventHandler(this.Designbutton_Click);
             // 
             // MainForm
             // 
@@ -227,5 +241,8 @@
         private System.Windows.Forms.Label Hellolabel;
         private System.Windows.Forms.Button Regbutton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Designbutton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

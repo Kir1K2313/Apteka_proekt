@@ -29,7 +29,9 @@ namespace Apteka
             mauc.Dock = DockStyle.Fill;
             Infopanel.Controls.Clear();
             Infopanel.Controls.Add(mauc);
-            Adminbutton.Visiable = false;
+            Adminbutton.Visible = false;
+            Designbutton.Visible = false;
+            DesignUserControl.
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -159,7 +161,9 @@ namespace Apteka
                     Hellolabel.Visible = true;
                     Hellolabel.Text = "Добро пожаловать, " + NameFamale;
                     Adminbutton.Visible = Convert.ToBoolean(isAdmin);
+                    Designbutton.Visible = Convert.ToBoolean(isAdmin);
                     Authpanel.Controls.Add(Adminbutton);
+                    Authpanel.Controls.Add(Designbutton);
                 }
                 else
                 {
@@ -204,6 +208,14 @@ namespace Apteka
             {
                 treeView1.Nodes.RemoveAt(1);
             }
+        }
+
+        private void Designbutton_Click(object sender, EventArgs e)
+        {
+            DesignUserControl dsuc = new DesignUserControl();
+            dsuc.Dock = DockStyle.Fill;
+            Controls.Clear();
+            Controls.Add(dsuc);
         }
     }
   

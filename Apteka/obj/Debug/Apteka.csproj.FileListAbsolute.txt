@@ -22,3 +22,4 @@ D:\Буренин Кирилл\Аптека\Аптека\Apteka\bin\Debug\MySql.
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.ClasificatsiaUserControl.resources
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.AdminUserControl.resources
 D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.RegForm.resources
+D:\Буренин Кирилл\Аптека\Аптека\Apteka\obj\Debug\Apteka.DesignUserControl.resources

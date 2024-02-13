@@ -74,6 +74,12 @@
     <Compile Include="ClasificatsiaUserControl.Designer.cs">
       <DependentUpon>ClasificatsiaUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DesignUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DesignUserControl.Designer.cs">
+      <DependentUpon>DesignUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClasificatsiaUserControl.resx">
       <DependentUpon>ClasificatsiaUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignUserControl.resx">
+      <DependentUpon>DesignUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
