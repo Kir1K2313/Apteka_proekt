@@ -15,7 +15,6 @@ namespace Apteka
         public ClasificatsiaUserControl(string id)
         {
             InitializeComponent();
-
             List<string> classif = SQLClass.myselect("Select ID, name, pic FROM lvl2 WHERE ID = '" + id + "'");
 
 
@@ -57,7 +56,7 @@ namespace Apteka
 
                 x += 410;
             }
-
+            DesignUserControl.useDesign(this);
         }
 
         private void meduclabel_Click(object sender, EventArgs e)

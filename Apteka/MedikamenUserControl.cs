@@ -15,7 +15,7 @@ namespace Apteka
         public MedikamenUserControl(string id)
         {
             InitializeComponent();
-
+         
 
             List<string> meduc = SQLClass.myselect("Select ID, name, pic FROM lvl3 WHERE ID = '" + id + "'");
 
@@ -26,6 +26,7 @@ namespace Apteka
             }
             catch (Exception) { }
 
+            DesignUserControl.useDesign(this);
         }
 
         private void MedikamenUserControl_Load(object sender, EventArgs e)

@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +19,11 @@ namespace Apteka
         public DesignUserControl()
         {
             InitializeComponent();
+            DesignUserControl.useDesign(this);
+
         }
+        
+        
 
       
 
@@ -28,6 +34,8 @@ namespace Apteka
 
         private void editlabelBTN_Click(object sender, EventArgs e)
         {
+            label_font = fontDialog1.Font;
+            label_color = fontDialog1.Color;
             if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 label_font = fontDialog1.Font;
@@ -49,9 +57,37 @@ namespace Apteka
         public static void ReadDesign()
         {
             //Чтение  параметров надписей
-            string font = SQLClass.myselect("SELECT value FROM Design WHERE type = 'System.Windows.Forms.Label' AND parametr = 'FONT'")[0];
-            string[] parts = font.Split(new char[] { ';' });
-            label_font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+            try
+            {
+                string font = SQLClass.myselect("SELECT value FROM Design WHERE type = 'System.Windows.Forms.Label' AND parametr = 'FONT'")[0];
+                string[] parts = font.Split(new char[] { ';' });
+                label_font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+
+                string color = SQLClass.myselect("SELECT value FROM Design WHERE type = 'System.Windows.Forms.Label' AND parametr = 'FONT_COLOR'")[0];
+                label_color = Color.FromArgb(Convert.ToInt32(color));
+            }
+            catch (Exception) { }
+
+        }
+        public static void useDesign(Control form)
+        {
+            foreach(Control ctrl in form.Controls)
+            {
+                if(ctrl is Label)
+                {
+                    ctrl.Font = label_font;
+                    ctrl.ForeColor = label_color; 
+                }
+                else
+                {
+                    useDesign(ctrl);
+                }
+            }
+        }
+
+        private void fontDialog1_Apply(object sender, EventArgs e)
+        {
+
         }
     }
 }

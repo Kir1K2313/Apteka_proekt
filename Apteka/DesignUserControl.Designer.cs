@@ -30,11 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Sampllabel = new System.Windows.Forms.Label();
+            this.editlabelBTN = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.editlabelBTN = new System.Windows.Forms.Button();
-            this.Sampllabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tabControl1.SuspendLayout();
@@ -49,7 +49,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(288, 124);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1242, 796);
@@ -60,20 +60,39 @@
             this.tabPage1.Controls.Add(this.Sampllabel);
             this.tabPage1.Controls.Add(this.editlabelBTN);
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage1.Size = new System.Drawing.Size(1234, 754);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Дизайн Надписей";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // Sampllabel
+            // 
+            this.Sampllabel.AutoSize = true;
+            this.Sampllabel.Location = new System.Drawing.Point(579, 171);
+            this.Sampllabel.Name = "Sampllabel";
+            this.Sampllabel.Size = new System.Drawing.Size(211, 29);
+            this.Sampllabel.TabIndex = 1;
+            this.Sampllabel.Text = "Образец надписи";
+            // 
+            // editlabelBTN
+            // 
+            this.editlabelBTN.Location = new System.Drawing.Point(178, 152);
+            this.editlabelBTN.Name = "editlabelBTN";
+            this.editlabelBTN.Size = new System.Drawing.Size(314, 67);
+            this.editlabelBTN.TabIndex = 0;
+            this.editlabelBTN.Text = "Изменить надпись";
+            this.editlabelBTN.UseVisualStyleBackColor = true;
+            this.editlabelBTN.Click += new System.EventHandler(this.editlabelBTN_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage2.Size = new System.Drawing.Size(1234, 754);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Дизайн Кнопок";
@@ -99,24 +118,10 @@
             this.tabPage4.Text = "Дизайн формов";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // editlabelBTN
+            // fontDialog1
             // 
-            this.editlabelBTN.Location = new System.Drawing.Point(178, 152);
-            this.editlabelBTN.Name = "editlabelBTN";
-            this.editlabelBTN.Size = new System.Drawing.Size(314, 67);
-            this.editlabelBTN.TabIndex = 0;
-            this.editlabelBTN.Text = "Изменить надпись";
-            this.editlabelBTN.UseVisualStyleBackColor = true;
-            this.editlabelBTN.Click += new System.EventHandler(this.editlabelBTN_Click);
-            // 
-            // Sampllabel
-            // 
-            this.Sampllabel.AutoSize = true;
-            this.Sampllabel.Location = new System.Drawing.Point(579, 171);
-            this.Sampllabel.Name = "Sampllabel";
-            this.Sampllabel.Size = new System.Drawing.Size(211, 29);
-            this.Sampllabel.TabIndex = 1;
-            this.Sampllabel.Text = "Образец надписи";
+            this.fontDialog1.ShowColor = true;
+            this.fontDialog1.Apply += new System.EventHandler(this.fontDialog1_Apply);
             // 
             // fileSystemWatcher1
             // 
@@ -129,7 +134,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "DesignUserControl";
             this.Size = new System.Drawing.Size(1923, 1178);
             this.Load += new System.EventHandler(this.DesignUserControl_Load);

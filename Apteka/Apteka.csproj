@@ -56,11 +56,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAptekUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAptekUC.Designer.cs">
+      <DependentUpon>AdminAptekUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminClassifUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminClassifUC.Designer.cs">
+      <DependentUpon>AdminClassifUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMedikomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminMedikomUC.Designer.cs">
+      <DependentUpon>AdminMedikomUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AdminUserControl.Designer.cs">
       <DependentUpon>AdminUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminUsersUC.Designer.cs">
+      <DependentUpon>AdminUsersUC.cs</DependentUpon>
     </Compile>
     <Compile Include="AptekaUserControl.cs">
       <SubType>UserControl</SubType>
@@ -107,8 +131,20 @@
       <DependentUpon>RegForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLClass.cs" />
+    <EmbeddedResource Include="AdminAptekUC.resx">
+      <DependentUpon>AdminAptekUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminClassifUC.resx">
+      <DependentUpon>AdminClassifUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMedikomUC.resx">
+      <DependentUpon>AdminMedikomUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminUserControl.resx">
       <DependentUpon>AdminUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUsersUC.resx">
+      <DependentUpon>AdminUsersUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AptekaUserControl.resx">
       <DependentUpon>AptekaUserControl.cs</DependentUpon>
@@ -153,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

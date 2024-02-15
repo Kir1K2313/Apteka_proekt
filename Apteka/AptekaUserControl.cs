@@ -16,7 +16,6 @@ namespace Apteka
         public AptekaUserControl(string id)
         {
             InitializeComponent();
-
             List<string> apteka = SQLClass.myselect("Select ID, name, pic FROM lvl1 WHERE ID = '" + id + "'");
 
             label1.Text = apteka[1];
@@ -58,6 +57,8 @@ namespace Apteka
                 x += 210;
             }
 
+
+            DesignUserControl.useDesign(this);
         }
 
         private void AptekaUserControl_Load(object sender, EventArgs e)

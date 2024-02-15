@@ -31,7 +31,10 @@ namespace Apteka
             Infopanel.Controls.Add(mauc);
             Adminbutton.Visible = false;
             Designbutton.Visible = false;
-            DesignUserControl.
+            DesignUserControl.ReadDesign();
+            DesignUserControl.useDesign(this);
+
+
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -199,6 +202,7 @@ namespace Apteka
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            DesignUserControl.useDesign(this);
             if (Convert.ToBoolean(isAdmin) && treeView1.Nodes.Count == 1)
             {
                 TreeNode node = new TreeNode("Админка");

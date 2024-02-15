@@ -16,7 +16,7 @@ namespace Apteka
         {
             InitializeComponent();
 
-
+            DesignUserControl.useDesign(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
