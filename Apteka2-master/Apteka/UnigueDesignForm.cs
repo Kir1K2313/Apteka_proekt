@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Apteka
+{
+    public partial class UnigueDesignForm : Form
+    {
+        Button btn;
+        public UnigueDesignForm(Button _btn)
+        {
+            InitializeComponent();
+            btn = _btn;
+            Samplebtn.Text = btn.Text;
+            Samplebtn.Font = btn.Font;
+            Samplebtn.ForeColor = btn.ForeColor;
+            Samplebtn.BackColor = btn.BackColor;
+            Samplebtn.Size = btn.Size;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Fontbtn_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = Samplebtn.Font;
+            fontDialog1.Color = Samplebtn.ForeColor;
+            if(fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Samplebtn.Font = fontDialog1.Font;
+                Samplebtn.ForeColor = fontDialog1.Color;
+
+                SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name +"' AND parametr = 'FONT'");
+                SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name +"' AND parametr = 'FONT_COLOR'");
+
+                SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'FONT', '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.Font.Name + ";" + Samplebtn.Font.Size.ToString() + "')");
+                SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'FONT_COLOR', '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.ForeColor.ToArgb() + "')");
+            }
+        }
+    }
+}
