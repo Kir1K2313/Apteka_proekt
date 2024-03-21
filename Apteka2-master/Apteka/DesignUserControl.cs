@@ -272,5 +272,5 @@ namespace Apteka
             catch (Exception) { }
         }
     }
-
+    
 }
