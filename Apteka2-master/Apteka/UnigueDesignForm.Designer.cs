@@ -54,6 +54,7 @@
             this.Colorbtn.TabIndex = 1;
             this.Colorbtn.Text = "Изменить цвет";
             this.Colorbtn.UseVisualStyleBackColor = true;
+            this.Colorbtn.Click += new System.EventHandler(this.Colorbtn_Click);
             // 
             // Samplebtn
             // 

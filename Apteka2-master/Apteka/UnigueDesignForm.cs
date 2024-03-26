@@ -43,7 +43,21 @@ namespace Apteka
 
                 SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'FONT', '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.Font.Name + ";" + Samplebtn.Font.Size.ToString() + "')");
                 SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'FONT_COLOR', '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.ForeColor.ToArgb() + "')");
+
+
             }
         }
+
+        private void Colorbtn_Click(object sender, EventArgs e)
+        {
+            colorDialog1.Color = Samplebtn.BackColor;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Samplebtn.BackColor = colorDialog1.Color;
+            }
+            SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parametr = 'BACK_COLOR'");
+            SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'BACK_COLOR',  '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.BackColor.ToArgb() + "')");
+        }
+    
     }
 }

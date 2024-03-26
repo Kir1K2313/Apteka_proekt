@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Аптеки");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Админка");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Дизайн");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Аптеки");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Админка");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Дизайн");
             this.Authpanel = new System.Windows.Forms.Panel();
             this.dizainbutton = new System.Windows.Forms.Button();
             this.Regbutton = new System.Windows.Forms.Button();
@@ -113,7 +113,7 @@
             // 
             // Authbutton
             // 
-            this.Authbutton.Location = new System.Drawing.Point(660, 35);
+            this.Authbutton.Location = new System.Drawing.Point(677, 33);
             this.Authbutton.Name = "Authbutton";
             this.Authbutton.Size = new System.Drawing.Size(159, 38);
             this.Authbutton.TabIndex = 4;
@@ -191,16 +191,16 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "Аптеки";
-            treeNode4.Text = "Аптеки";
-            treeNode5.Name = "Узел0";
-            treeNode5.Text = "Админка";
-            treeNode6.Name = "";
-            treeNode6.Text = "Дизайн";
+            treeNode1.Name = "Аптеки";
+            treeNode1.Text = "Аптеки";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Админка";
+            treeNode3.Name = "";
+            treeNode3.Text = "Дизайн";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(282, 428);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -216,12 +216,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.дизайнКнопкиToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 28);
             // 
             // дизайнКнопкиToolStripMenuItem
             // 
             this.дизайнКнопкиToolStripMenuItem.Name = "дизайнКнопкиToolStripMenuItem";
-            this.дизайнКнопкиToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.дизайнКнопкиToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.дизайнКнопкиToolStripMenuItem.Text = "Дизайн кнопки";
             this.дизайнКнопкиToolStripMenuItem.Click += new System.EventHandler(this.дизайнКнопкиToolStripMenuItem_Click);
             // 

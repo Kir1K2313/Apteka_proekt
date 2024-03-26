@@ -259,15 +259,15 @@ namespace Apteka
         {
             try
             {
-                string font = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT' AND form = '"+ btn.FindForm().Name + "' AND name = '" + btn.Name +"'")[0];
+                string font = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name +"'")[0];
                 string[] parts = font.Split(new char[] { ';' });
                 btn.Font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
 
-                string color = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT_COLOUR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                string color = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
                 btn.ForeColor = Color.FromArgb(Convert.ToInt32(color));
 
-              //  string bgcolor = SQLClass.myselect("SELECT value FROM Design WHERE type = 'System.Windows.Forms.Button' AND parametr = 'BACK_COLOR'")[0];
-                //button_backcolor = Color.FromArgb(Convert.ToInt32(bgcolor));
+                string bgcolor = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'BACK_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                btn.BackColor = Color.FromArgb(Convert.ToInt32(bgcolor));
             }
             catch (Exception) { }
         }
