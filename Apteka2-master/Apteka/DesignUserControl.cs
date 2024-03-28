@@ -268,6 +268,10 @@ namespace Apteka
 
                 string bgcolor = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'BACK_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
                 btn.BackColor = Color.FromArgb(Convert.ToInt32(bgcolor));
+
+                string Location = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                string[] parts1 = Location.Split(new string [] { ", " }, StringSplitOptions.None);
+                btn.Location = new Point(Convert.ToInt32(parts1[0]), Convert.ToInt32(parts[1]));
             }
             catch (Exception) { }
         }

@@ -245,7 +245,7 @@ namespace Apteka
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            DesignUserControl.useDesign(this);
+          //  DesignUserControl.useDesign(this);
             if (Convert.ToBoolean(isAdmin) && treeView1.Nodes.Count == 1)
             {
                 

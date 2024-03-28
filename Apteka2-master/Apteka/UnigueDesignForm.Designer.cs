@@ -34,6 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.CoordinatetB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SizetB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Savebutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Fontbtn
@@ -79,11 +84,58 @@
             // 
             this.fontDialog1.ShowColor = true;
             // 
+            // CoordinatetB
+            // 
+            this.CoordinatetB.Location = new System.Drawing.Point(86, 407);
+            this.CoordinatetB.Name = "CoordinatetB";
+            this.CoordinatetB.Size = new System.Drawing.Size(347, 34);
+            this.CoordinatetB.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(81, 375);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Координаты";
+            // 
+            // SizetB
+            // 
+            this.SizetB.Location = new System.Drawing.Point(86, 494);
+            this.SizetB.Name = "SizetB";
+            this.SizetB.Size = new System.Drawing.Size(347, 34);
+            this.SizetB.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(81, 462);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 29);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Размеры";
+            // 
+            // Savebutton
+            // 
+            this.Savebutton.Location = new System.Drawing.Point(529, 407);
+            this.Savebutton.Name = "Savebutton";
+            this.Savebutton.Size = new System.Drawing.Size(249, 126);
+            this.Savebutton.TabIndex = 8;
+            this.Savebutton.Text = "Применить";
+            this.Savebutton.UseVisualStyleBackColor = true;
+            this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
+            // 
             // UnigueDesignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 681);
+            this.Controls.Add(this.Savebutton);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.SizetB);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CoordinatetB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Samplebtn);
             this.Controls.Add(this.Colorbtn);
@@ -105,5 +157,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TextBox CoordinatetB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SizetB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Savebutton;
     }
 }

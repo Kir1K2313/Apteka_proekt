@@ -22,6 +22,9 @@ namespace Apteka
             Samplebtn.ForeColor = btn.ForeColor;
             Samplebtn.BackColor = btn.BackColor;
             Samplebtn.Size = btn.Size;
+
+            CoordinatetB.Text = btn.Location.X.ToString() + ", " + btn.Location.Y.ToString();
+            SizetB.Text = btn.Size.Width.ToString() + ", " + btn.Size.Height.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -54,10 +57,19 @@ namespace Apteka
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 Samplebtn.BackColor = colorDialog1.Color;
+                SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parametr = 'BACK_COLOR'");
+                SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'BACK_COLOR',  '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.BackColor.ToArgb() + "')");
             }
-            SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parametr = 'BACK_COLOR'");
-            SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'BACK_COLOR',  '" + btn.FindForm().Name + "','" + btn.Name + "', '" + Samplebtn.BackColor.ToArgb() + "')");
         }
-    
+
+        private void Savebutton_Click(object sender, EventArgs e)
+        {
+
+            SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parametr = 'LOCATION'");
+            SQLClass.myUpdate("DELETE FROM uniquedesign WHERE type = '" + Samplebtn.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parametr = 'SIZE'");
+
+            SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'LOCATION', '" + btn.FindForm().Name + "','" + btn.Name + "', '" + CoordinatetB.Text + "')");
+            SQLClass.myUpdate("INSERT INTO uniquedesign (type, parametr, form, name, value) VALUE ('" + Samplebtn.GetType() + "', 'SIZE', '" + btn.FindForm().Name + "','" + btn.Name + "', '" + SizetB.Text + "')");
+        }
     }
 }
