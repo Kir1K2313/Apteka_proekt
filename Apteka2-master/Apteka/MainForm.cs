@@ -123,6 +123,7 @@ namespace Apteka
             string id_apteka;
             string id_classif;
             DesignUserControl.button_conmenu = contextMenuStrip1;
+            DesignUserControl.panel_conmenu = contextMenuEditpanel;
             DesignUserControl.useMenu(this);
 
             List<string> apteki = SQLClass.myselect("Select ID, name FROM level1 ");
@@ -288,6 +289,15 @@ namespace Apteka
             Button btn = (Button)(conmenu.SourceControl);
             UnigueDesignForm UniqueDesign = new UnigueDesignForm(btn);
             UniqueDesign.ShowDialog();
+        }
+
+        private void изменениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            ContextMenuStrip conmenu = (ContextMenuStrip)(item.GetCurrentParent());
+            Panel pan = (Panel)(conmenu.SourceControl);
+            EditpanelForm panform = new EditpanelForm(pan);
+            panform.ShowDialog();
         }
     }
   

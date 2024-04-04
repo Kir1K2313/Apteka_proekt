@@ -12,20 +12,21 @@ namespace Apteka
 {
     public partial class DesignUserControl : UserControl
     {
-       public static ContextMenuStrip button_conmenu;
+        public static ContextMenuStrip button_conmenu;
+        public static ContextMenuStrip panel_conmenu;
 
-       public static Font label_font;
-       public static Color label_color;
+        public static Font label_font;
+        public static Color label_color;
 
-       public static Color panel_color;
+        public static Color panel_color;
 
-       public static Font textbox_font;
-       public static Color textbox_forecolor;
-       public static Color textbox_backcolor;
+        public static Font textbox_font;
+        public static Color textbox_forecolor;
+        public static Color textbox_backcolor;
 
-       public static Font button_font;
-       public static Color button_forecolor;
-       public static Color button_backcolor;
+        public static Font button_font;
+        public static Color button_forecolor;
+        public static Color button_backcolor;
         public DesignUserControl()
         {
             InitializeComponent();
@@ -123,6 +124,7 @@ namespace Apteka
                 if (ctrl is Panel)
                 {
                     ctrl.BackColor = panel_color;
+                    ReadpanelDesign(ctrl as Panel);
                 }
                 else
                 {
@@ -155,7 +157,7 @@ namespace Apteka
                 #endregion
             }
         }
-  
+
 
 
         private void DesignUserControl_Load(object sender, EventArgs e)
@@ -168,9 +170,9 @@ namespace Apteka
             colorDialog1.Color = panel_color;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                 panel_color = colorDialog1.Color;
+                panel_color = colorDialog1.Color;
 
-                 Samplpanel.BackColor = panel_color;
+                Samplpanel.BackColor = panel_color;
             }
 
             SQLClass.myUpdate("DELETE FROM Design WHERE type = '" + Samplpanel.GetType() + "' AND parametr = 'PANEL_COLOR'");
@@ -243,9 +245,9 @@ namespace Apteka
         #endregion
         public static void useMenu(Control Form)
         {
-            foreach(Control ctrl in Form.Controls)
+            foreach (Control ctrl in Form.Controls)
             {
-                if(ctrl is Button && Convert.ToBoolean(MainForm.isAdmin))
+                if (ctrl is Button && Convert.ToBoolean(MainForm.isAdmin))
                 {
                     ctrl.ContextMenuStrip = button_conmenu;
                 }
@@ -253,31 +255,50 @@ namespace Apteka
                 {
                     useMenu(ctrl);
                 }
+
+                if (ctrl is Panel && Convert.ToBoolean(MainForm.isAdmin))
+                {
+                    ctrl.ContextMenuStrip = panel_conmenu;
+                }
+                else
+                {
+                    useMenu(ctrl);
+                }
+
             }
         }
-        public static void ReadUniqueDesign(Button btn)
+             public static void ReadUniqueDesign(Button btn)
+             {
+                try
+                {
+                    string font = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                    string[] parts = font.Split(new char[] { ';' });
+                    btn.Font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+
+                    string color = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                    btn.ForeColor = Color.FromArgb(Convert.ToInt32(color));
+
+                    string bgcolor = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'BACK_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                    btn.BackColor = Color.FromArgb(Convert.ToInt32(bgcolor));
+
+                    string Location = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'LOCATION' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                    string[] parts1 = Location.Split(new string[] { ", " }, StringSplitOptions.None);
+                    btn.Location = new Point(Convert.ToInt32(parts1[0]), Convert.ToInt32(parts1[1]));
+
+                    string size = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'SIZE' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
+                    string[] size1 = size.Split(new string[] { ", " }, StringSplitOptions.None);
+                    btn.Size = new Size(Convert.ToInt32(size1[0]), Convert.ToInt32(size1[1]));
+
+
+                }
+                catch (Exception) { }
+             }
+        public static void ReadpanelDesign(Panel pan)
         {
             try
             {
-                string font = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name +"'")[0];
-                string[] parts = font.Split(new char[] { ';' });
-                btn.Font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
-
-                string color = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'FONT_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
-                btn.ForeColor = Color.FromArgb(Convert.ToInt32(color));
-
-                string bgcolor = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'BACK_COLOR' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
-                btn.BackColor = Color.FromArgb(Convert.ToInt32(bgcolor));
-
-                string Location = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'LOCATION' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
-                string[] parts1 = Location.Split(new string [] { ", " }, StringSplitOptions.None);
-                btn.Location = new Point(Convert.ToInt32(parts1[0]), Convert.ToInt32(parts1[1]));
-
-                string size = SQLClass.myselect("SELECT value FROM uniquedesign WHERE type = 'System.Windows.Forms.Button' AND parametr = 'SIZE' AND form = '" + btn.FindForm().Name + "' AND name = '" + btn.Name + "'")[0];
-                string[] size1 = size.Split(new string[] { ", " }, StringSplitOptions.None);
-                btn.Size = new Size(Convert.ToInt32(size1[0]), Convert.ToInt32(size1[1]));
-
-
+                string height = SQLClass.myselect("SELECT value FROM paneldesign WHERE type = 'System.Windows.Forms.Panel' AND name = '" + pan.Name +  "' AND parametr = 'PANEL_HEIGHT'")[0];
+                pan.Height = Convert.ToInt32(height);
             }
             catch (Exception) { }
         }

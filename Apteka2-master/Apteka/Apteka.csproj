@@ -104,6 +104,12 @@
     <Compile Include="DesignUserControl.Designer.cs">
       <DependentUpon>DesignUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditpanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditpanelForm.Designer.cs">
+      <DependentUpon>EditpanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DesignUserControl.resx">
       <DependentUpon>DesignUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditpanelForm.resx">
+      <DependentUpon>EditpanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

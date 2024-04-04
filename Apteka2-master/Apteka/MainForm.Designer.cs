@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Аптеки");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Админка");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Дизайн");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Аптеки");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Админка");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Дизайн");
             this.Authpanel = new System.Windows.Forms.Panel();
             this.dizainbutton = new System.Windows.Forms.Button();
             this.Regbutton = new System.Windows.Forms.Button();
@@ -49,9 +49,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.дизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuEditpanel = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.изменениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Authpanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuEditpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Authpanel
@@ -191,16 +194,16 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Аптеки";
-            treeNode1.Text = "Аптеки";
-            treeNode2.Name = "Узел0";
-            treeNode2.Text = "Админка";
-            treeNode3.Name = "";
-            treeNode3.Text = "Дизайн";
+            treeNode4.Name = "Аптеки";
+            treeNode4.Text = "Аптеки";
+            treeNode5.Name = "Узел0";
+            treeNode5.Text = "Админка";
+            treeNode6.Name = "";
+            treeNode6.Text = "Дизайн";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
+            treeNode4,
+            treeNode5,
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(282, 428);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -225,6 +228,22 @@
             this.дизайнКнопкиToolStripMenuItem.Text = "Дизайн кнопки";
             this.дизайнКнопкиToolStripMenuItem.Click += new System.EventHandler(this.дизайнКнопкиToolStripMenuItem_Click);
             // 
+            // contextMenuEditpanel
+            // 
+            this.contextMenuEditpanel.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuEditpanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.изменениеToolStripMenuItem});
+            this.contextMenuEditpanel.Name = "contextMenuEditpanel";
+            this.contextMenuEditpanel.Size = new System.Drawing.Size(211, 56);
+   //         this.contextMenuEditpanel.Opening += new System.ComponentModel.CancelEventHandler(this.//contextMenuEditpanel_Opening);
+            // 
+            // изменениеToolStripMenuItem
+            // 
+            this.изменениеToolStripMenuItem.Name = "изменениеToolStripMenuItem";
+            this.изменениеToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.изменениеToolStripMenuItem.Text = "Изменение";
+            this.изменениеToolStripMenuItem.Click += new System.EventHandler(this.изменениеToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -242,6 +261,7 @@
             this.Authpanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuEditpanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,5 +285,7 @@
         private System.Windows.Forms.Button dizainbutton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem дизайнКнопкиToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuEditpanel;
+        private System.Windows.Forms.ToolStripMenuItem изменениеToolStripMenuItem;
     }
 }
