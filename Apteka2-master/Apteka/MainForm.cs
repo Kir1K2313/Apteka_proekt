@@ -35,6 +35,7 @@ namespace Apteka
             DesignUserControl.ReadDesign();
             DesignUserControl.useDesign(this);
             DesignUserControl.useMenu(this);
+            VkpictureBox.Size = new Size(DesignUserControl.HeightPanel, DesignUserControl.HeightPanel);
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -296,8 +297,18 @@ namespace Apteka
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
             ContextMenuStrip conmenu = (ContextMenuStrip)(item.GetCurrentParent());
             Panel pan = (Panel)(conmenu.SourceControl);
+
             EditpanelForm panform = new EditpanelForm(pan);
             panform.ShowDialog();
+
+            pan.Size = panform.ctrl.Size;
+
+            VkpictureBox.Size = new Size(pan.Height, pan.Height);
+        }
+
+        private void VkpictureBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/aptekaaprel");
         }
     }
   

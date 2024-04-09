@@ -14,6 +14,7 @@ namespace Apteka
     {
         public static ContextMenuStrip button_conmenu;
         public static ContextMenuStrip panel_conmenu;
+        public static int HeightPanel;
 
         public static Font label_font;
         public static Color label_color;
@@ -299,6 +300,11 @@ namespace Apteka
             {
                 string height = SQLClass.myselect("SELECT value FROM paneldesign WHERE type = 'System.Windows.Forms.Panel' AND name = '" + pan.Name +  "' AND parametr = 'PANEL_HEIGHT'")[0];
                 pan.Height = Convert.ToInt32(height);
+                if (pan.Name == "CopyRightpanel")
+                {
+                    HeightPanel = pan.Height;
+                }
+
             }
             catch (Exception) { }
         }

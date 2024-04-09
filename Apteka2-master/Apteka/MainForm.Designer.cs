@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Аптеки");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Админка");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Дизайн");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Аптеки");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Админка");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Дизайн");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Authpanel = new System.Windows.Forms.Panel();
             this.dizainbutton = new System.Windows.Forms.Button();
             this.Regbutton = new System.Windows.Forms.Button();
@@ -51,10 +52,13 @@
             this.дизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuEditpanel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.изменениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VkpictureBox = new System.Windows.Forms.PictureBox();
             this.Authpanel.SuspendLayout();
+            this.CopyRightpanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuEditpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Authpanel
@@ -160,11 +164,12 @@
             // CopyRightpanel
             // 
             this.CopyRightpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CopyRightpanel.Controls.Add(this.VkpictureBox);
             this.CopyRightpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CopyRightpanel.Location = new System.Drawing.Point(0, 539);
+            this.CopyRightpanel.Location = new System.Drawing.Point(0, 531);
             this.CopyRightpanel.Margin = new System.Windows.Forms.Padding(5);
             this.CopyRightpanel.Name = "CopyRightpanel";
-            this.CopyRightpanel.Size = new System.Drawing.Size(1461, 88);
+            this.CopyRightpanel.Size = new System.Drawing.Size(1461, 96);
             this.CopyRightpanel.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -179,7 +184,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1461, 434);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1461, 522);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Infopanel
@@ -187,24 +192,25 @@
             this.Infopanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Infopanel.Location = new System.Drawing.Point(291, 3);
             this.Infopanel.Name = "Infopanel";
-            this.Infopanel.Size = new System.Drawing.Size(1167, 428);
+            this.Infopanel.Size = new System.Drawing.Size(1167, 516);
             this.Infopanel.TabIndex = 3;
             // 
             // treeView1
             // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "Аптеки";
-            treeNode4.Text = "Аптеки";
-            treeNode5.Name = "Узел0";
-            treeNode5.Text = "Админка";
-            treeNode6.Name = "";
-            treeNode6.Text = "Дизайн";
+            treeNode1.Name = "Аптеки";
+            treeNode1.Text = "Аптеки";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Админка";
+            treeNode3.Name = "";
+            treeNode3.Text = "Дизайн";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(282, 428);
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            this.treeView1.Size = new System.Drawing.Size(282, 516);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -234,23 +240,33 @@
             this.contextMenuEditpanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.изменениеToolStripMenuItem});
             this.contextMenuEditpanel.Name = "contextMenuEditpanel";
-            this.contextMenuEditpanel.Size = new System.Drawing.Size(211, 56);
-   //         this.contextMenuEditpanel.Opening += new System.ComponentModel.CancelEventHandler(this.//contextMenuEditpanel_Opening);
+            this.contextMenuEditpanel.Size = new System.Drawing.Size(159, 28);
             // 
             // изменениеToolStripMenuItem
             // 
             this.изменениеToolStripMenuItem.Name = "изменениеToolStripMenuItem";
-            this.изменениеToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.изменениеToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.изменениеToolStripMenuItem.Text = "Изменение";
             this.изменениеToolStripMenuItem.Click += new System.EventHandler(this.изменениеToolStripMenuItem_Click);
+            // 
+            // VkpictureBox
+            // 
+            this.VkpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VkpictureBox.Image")));
+            this.VkpictureBox.Location = new System.Drawing.Point(153, 12);
+            this.VkpictureBox.Name = "VkpictureBox";
+            this.VkpictureBox.Size = new System.Drawing.Size(51, 33);
+            this.VkpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VkpictureBox.TabIndex = 0;
+            this.VkpictureBox.TabStop = false;
+            this.VkpictureBox.Click += new System.EventHandler(this.VkpictureBox_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 627);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.CopyRightpanel);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Authpanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -259,9 +275,11 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Authpanel.ResumeLayout(false);
             this.Authpanel.PerformLayout();
+            this.CopyRightpanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuEditpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem дизайнКнопкиToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuEditpanel;
         private System.Windows.Forms.ToolStripMenuItem изменениеToolStripMenuItem;
+        public System.Windows.Forms.PictureBox VkpictureBox;
     }
 }
