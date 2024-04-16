@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Аптеки");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Админка");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Дизайн");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Authpanel = new System.Windows.Forms.Panel();
             this.dizainbutton = new System.Windows.Forms.Button();
             this.Regbutton = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.LogintextBox = new System.Windows.Forms.TextBox();
             this.Loginlabel = new System.Windows.Forms.Label();
             this.CopyRightpanel = new System.Windows.Forms.Panel();
+            this.VkpictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Infopanel = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -52,13 +53,13 @@
             this.дизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuEditpanel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.изменениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VkpictureBox = new System.Windows.Forms.PictureBox();
+            this.Weatherlabel = new System.Windows.Forms.Label();
             this.Authpanel.SuspendLayout();
             this.CopyRightpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuEditpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Authpanel
@@ -164,6 +165,7 @@
             // CopyRightpanel
             // 
             this.CopyRightpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CopyRightpanel.Controls.Add(this.Weatherlabel);
             this.CopyRightpanel.Controls.Add(this.VkpictureBox);
             this.CopyRightpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CopyRightpanel.Location = new System.Drawing.Point(0, 531);
@@ -171,6 +173,17 @@
             this.CopyRightpanel.Name = "CopyRightpanel";
             this.CopyRightpanel.Size = new System.Drawing.Size(1461, 96);
             this.CopyRightpanel.TabIndex = 2;
+            // 
+            // VkpictureBox
+            // 
+            this.VkpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VkpictureBox.Image")));
+            this.VkpictureBox.Location = new System.Drawing.Point(19, 3);
+            this.VkpictureBox.Name = "VkpictureBox";
+            this.VkpictureBox.Size = new System.Drawing.Size(51, 33);
+            this.VkpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VkpictureBox.TabIndex = 0;
+            this.VkpictureBox.TabStop = false;
+            this.VkpictureBox.Click += new System.EventHandler(this.VkpictureBox_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -249,16 +262,14 @@
             this.изменениеToolStripMenuItem.Text = "Изменение";
             this.изменениеToolStripMenuItem.Click += new System.EventHandler(this.изменениеToolStripMenuItem_Click);
             // 
-            // VkpictureBox
+            // Weatherlabel
             // 
-            this.VkpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VkpictureBox.Image")));
-            this.VkpictureBox.Location = new System.Drawing.Point(153, 12);
-            this.VkpictureBox.Name = "VkpictureBox";
-            this.VkpictureBox.Size = new System.Drawing.Size(51, 33);
-            this.VkpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.VkpictureBox.TabIndex = 0;
-            this.VkpictureBox.TabStop = false;
-            this.VkpictureBox.Click += new System.EventHandler(this.VkpictureBox_Click);
+            this.Weatherlabel.AutoSize = true;
+            this.Weatherlabel.Location = new System.Drawing.Point(191, 22);
+            this.Weatherlabel.Name = "Weatherlabel";
+            this.Weatherlabel.Size = new System.Drawing.Size(79, 29);
+            this.Weatherlabel.TabIndex = 1;
+            this.Weatherlabel.Text = "label1";
             // 
             // MainForm
             // 
@@ -276,10 +287,11 @@
             this.Authpanel.ResumeLayout(false);
             this.Authpanel.PerformLayout();
             this.CopyRightpanel.ResumeLayout(false);
+            this.CopyRightpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuEditpanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +318,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuEditpanel;
         private System.Windows.Forms.ToolStripMenuItem изменениеToolStripMenuItem;
         public System.Windows.Forms.PictureBox VkpictureBox;
+        private System.Windows.Forms.Label Weatherlabel;
     }
 }
