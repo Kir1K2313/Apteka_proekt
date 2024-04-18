@@ -38,7 +38,9 @@ namespace Apteka
             VkpictureBox.Size = new Size(DesignUserControl.HeightPanel, DesignUserControl.HeightPanel);
 
             APIClass.Weather();
-            Weatherlabel.Text = "Температура" + APIClass.temper + " C";
+            Weatherlabel.Text = "Температура " + APIClass.temper + " C";
+            APIClass.Vals();
+
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)

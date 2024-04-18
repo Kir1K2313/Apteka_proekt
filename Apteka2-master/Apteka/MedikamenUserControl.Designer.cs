@@ -31,6 +31,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.meduclabel = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Pricelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // meduclabel
             // 
             this.meduclabel.AutoSize = true;
-            this.meduclabel.Location = new System.Drawing.Point(141, 18);
+            this.meduclabel.Location = new System.Drawing.Point(88, 18);
             this.meduclabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.meduclabel.Name = "meduclabel";
             this.meduclabel.Size = new System.Drawing.Size(79, 29);
@@ -58,10 +59,20 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // Pricelabel
+            // 
+            this.Pricelabel.AutoSize = true;
+            this.Pricelabel.Location = new System.Drawing.Point(726, 85);
+            this.Pricelabel.Name = "Pricelabel";
+            this.Pricelabel.Size = new System.Drawing.Size(79, 29);
+            this.Pricelabel.TabIndex = 2;
+            this.Pricelabel.Text = "label1";
+            // 
             // MedikamenUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Pricelabel);
             this.Controls.Add(this.meduclabel);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -80,5 +91,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label meduclabel;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label Pricelabel;
     }
 }

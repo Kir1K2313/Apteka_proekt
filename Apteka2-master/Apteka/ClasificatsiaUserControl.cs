@@ -28,19 +28,25 @@ namespace Apteka
             }
             catch (Exception) { }
 
-            List<string> meduc = SQLClass.myselect("Select id, name, pic FROM level3 WHERE id_class = '" + id_class + "'");
+            List<string> meduc = SQLClass.myselect("Select id, name, pic, price FROM level3 WHERE id_class = '" + id_class + "'");
 
             int x = 400;
-            for (int i = 0; i < meduc.Count; i += 3)
+            for (int i = 0; i < meduc.Count; i += 4)
             {
-                Label lbl = new Label();
-                lbl.Location = new Point(x, 60);
-                lbl.Size = new Size(200, 30);
-                lbl.Font = new Font("Arial", 13);
-                lbl.Text = meduc[i + 1];
-                lbl.Tag = meduc[i];
-                lbl.Click += new EventHandler(meduclabel_Click);
-                Vievpanel.Controls.Add(lbl);
+                Label Namelbl = new Label();
+                Namelbl.Location = new Point(x, 60);
+                Namelbl.Size = new Size(200, 30);
+                Namelbl.Font = new Font("Arial", 13);
+                Namelbl.Text = meduc[i + 1];
+                Namelbl.Tag = meduc[i];
+                Namelbl.Click += new EventHandler(meduclabel_Click);
+                Vievpanel.Controls.Add(Namelbl);
+                Label Pricelbl = new Label();
+                Pricelbl.Location = new Point(x, 360);
+                Pricelbl.Size = new Size(200, 30);
+                Pricelbl.Font = new Font("Arial", 13);
+                Pricelbl.Text = "Цена: " + meduc[i + 3] + " руб";
+                Vievpanel.Controls.Add(Pricelbl);
 
                 PictureBox pb = new PictureBox();
                 try
@@ -56,6 +62,8 @@ namespace Apteka
                 Vievpanel.Controls.Add(pb);
 
                 x += 210;
+
+
             }
 
         }
