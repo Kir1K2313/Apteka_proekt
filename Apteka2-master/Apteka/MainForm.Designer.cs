@@ -44,6 +44,7 @@
             this.LogintextBox = new System.Windows.Forms.TextBox();
             this.Loginlabel = new System.Windows.Forms.Label();
             this.CopyRightpanel = new System.Windows.Forms.Panel();
+            this.ValcomboBox = new System.Windows.Forms.ComboBox();
             this.Weatherlabel = new System.Windows.Forms.Label();
             this.VkpictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,7 +55,6 @@
             this.дизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuEditpanel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.изменениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Authpanel.SuspendLayout();
             this.CopyRightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).BeginInit();
@@ -166,7 +166,7 @@
             // CopyRightpanel
             // 
             this.CopyRightpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CopyRightpanel.Controls.Add(this.comboBox1);
+            this.CopyRightpanel.Controls.Add(this.ValcomboBox);
             this.CopyRightpanel.Controls.Add(this.Weatherlabel);
             this.CopyRightpanel.Controls.Add(this.VkpictureBox);
             this.CopyRightpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -175,6 +175,20 @@
             this.CopyRightpanel.Name = "CopyRightpanel";
             this.CopyRightpanel.Size = new System.Drawing.Size(1461, 96);
             this.CopyRightpanel.TabIndex = 2;
+            // 
+            // ValcomboBox
+            // 
+            this.ValcomboBox.FormattingEnabled = true;
+            this.ValcomboBox.Items.AddRange(new object[] {
+            "RUB",
+            "USD",
+            "EUR",
+            "CNY"});
+            this.ValcomboBox.Location = new System.Drawing.Point(538, 27);
+            this.ValcomboBox.Name = "ValcomboBox";
+            this.ValcomboBox.Size = new System.Drawing.Size(191, 37);
+            this.ValcomboBox.TabIndex = 2;
+            this.ValcomboBox.SelectedIndexChanged += new System.EventHandler(this.ValcomboBox_SelectedIndexChanged);
             // 
             // Weatherlabel
             // 
@@ -273,19 +287,6 @@
             this.изменениеToolStripMenuItem.Text = "Изменение";
             this.изменениеToolStripMenuItem.Click += new System.EventHandler(this.изменениеToolStripMenuItem_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "RUB",
-            "USD",
-            "EUR",
-            "CNY"});
-            this.comboBox1.Location = new System.Drawing.Point(538, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 37);
-            this.comboBox1.TabIndex = 2;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -334,6 +335,6 @@
         private System.Windows.Forms.ToolStripMenuItem изменениеToolStripMenuItem;
         public System.Windows.Forms.PictureBox VkpictureBox;
         private System.Windows.Forms.Label Weatherlabel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ValcomboBox;
     }
 }

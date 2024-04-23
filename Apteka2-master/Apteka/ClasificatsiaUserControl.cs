@@ -45,7 +45,7 @@ namespace Apteka
                 Pricelbl.Location = new Point(x, 360);
                 Pricelbl.Size = new Size(200, 30);
                 Pricelbl.Font = new Font("Arial", 13);
-                Pricelbl.Text = "Цена: " + meduc[i + 3] + " руб";
+                Pricelbl.Text = "Цена,  руб.:" + meduc[i + 3];
                 Vievpanel.Controls.Add(Pricelbl);
 
                 PictureBox pb = new PictureBox();

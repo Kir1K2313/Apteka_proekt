@@ -14,6 +14,7 @@ namespace Apteka
     public static class APIClass
        
     {
+        public static Dictionary <string, double> vals = new Dictionary <string, double> ();
         public static string temper;
 
         public static void Weather()
@@ -50,6 +51,10 @@ namespace Apteka
             double Eur = Convert.ToDouble(eur);
             double Cny = Convert.ToDouble(cny);
 
+            vals.Add("RUB", 1);
+            vals.Add("USD", Usd);
+            vals.Add("EUR", Eur);
+            vals.Add("CNY", Cny);
 
         }
     }

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +18,8 @@ namespace Apteka
         public static string Login = "";
         public static string NameFamale = "";
         public static int isAdmin;
+        public static string OldVal = "RUB";
+        public static string NewVal = "RUB";
         public MainForm()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace Apteka
             APIClass.Weather();
             Weatherlabel.Text = "Температура " + APIClass.temper + " C";
             APIClass.Vals();
+            ValcomboBox.SelectedIndex = 0;
 
         }
 
@@ -314,6 +316,33 @@ namespace Apteka
         private void VkpictureBox_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://vk.com/aptekaaprel");
+        }
+
+        private void ValcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OldVal = NewVal;
+            NewVal = ValcomboBox.Text;
+
+            double coef = APIClass.vals[OldVal] / APIClass.vals[NewVal];
+            var pricelbl = Controls.Find("Pricelbl", true);
+            foreach(Label lbl in pricelbl)
+            {
+                double price = Convert.ToDouble(lbl.Text);
+                price = Math.Round((price * coef), 2);
+                lbl.Text = price.ToString();
+            }
+            var lbl2 = Controls.Find("Labellabel", true);
+            foreach (Label lbl in lbl2) 
+            {
+                if (NewVal == "RUB")
+                    lbl.Text = "Цена, руб. :";
+                else  if (NewVal == "USD")
+                    lbl.Text = "Цена, $. :";
+                else if (NewVal == "EUR")
+                    lbl.Text = "Цена, €. :";
+                else if (NewVal == "CNY")
+                    lbl.Text = "Цена, ¥. :";
+            }
         }
     }
   
