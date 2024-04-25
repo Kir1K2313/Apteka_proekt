@@ -50,6 +50,7 @@ namespace Apteka
 
             if (e.Node.Level == 0 && e.Node.Text == "Аптеки")
             {
+                ValcomboBox.SelectedIndex = 0;
                 MainUserControl main = new MainUserControl();
                 main.Dock = DockStyle.Fill;
                 Infopanel.Controls.Clear();
@@ -57,10 +58,12 @@ namespace Apteka
             }
             else if (e.Node.Level == 1 && e.Node.Parent.Text == "Аптеки")
             {
+                ValcomboBox.SelectedIndex = 0;
                 AptekaUserControl apteka = new AptekaUserControl(e.Node.Tag.ToString());
                 apteka.Dock = DockStyle.Fill;
                 Infopanel.Controls.Clear();
                 Infopanel.Controls.Add(apteka);
+            
             }
 
             else if (e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Аптеки")
@@ -324,7 +327,7 @@ namespace Apteka
             NewVal = ValcomboBox.Text;
 
             double coef = APIClass.vals[OldVal] / APIClass.vals[NewVal];
-            var pricelbl = Controls.Find("Pricelbl", true);
+            var pricelbl = Controls.Find("Pricelabel", true);
             foreach(Label lbl in pricelbl)
             {
                 double price = Convert.ToDouble(lbl.Text);
@@ -335,13 +338,13 @@ namespace Apteka
             foreach (Label lbl in lbl2) 
             {
                 if (NewVal == "RUB")
-                    lbl.Text = "Цена, руб. :";
+                    lbl.Text = "Цена, руб.: ";
                 else  if (NewVal == "USD")
-                    lbl.Text = "Цена, $. :";
+                    lbl.Text = "Цена, $";
                 else if (NewVal == "EUR")
-                    lbl.Text = "Цена, €. :";
+                    lbl.Text = "Цена, €";
                 else if (NewVal == "CNY")
-                    lbl.Text = "Цена, ¥. :";
+                    lbl.Text = "Цена, ¥";
             }
         }
     }

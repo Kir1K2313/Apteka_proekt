@@ -72,11 +72,10 @@
             // Pricelabel
             // 
             this.Pricelabel.AutoSize = true;
-            this.Pricelabel.Location = new System.Drawing.Point(919, 85);
+            this.Pricelabel.Location = new System.Drawing.Point(872, 85);
             this.Pricelabel.Name = "Pricelabel";
-            this.Pricelabel.Size = new System.Drawing.Size(79, 29);
+            this.Pricelabel.Size = new System.Drawing.Size(0, 29);
             this.Pricelabel.TabIndex = 3;
-            this.Pricelabel.Text = "label1";
             // 
             // MedikamenUserControl
             // 

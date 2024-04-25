@@ -43,9 +43,9 @@ namespace Apteka
             string sReadData = sr.ReadToEnd();
             response.Close();
             dynamic v = JsonConvert.DeserializeObject(sReadData);
-            string usd = v.Valute.USD.ToString();
-            string eur = v.Valute.EUR.ToString();
-            string cny = v.Valute.CNY.ToString();
+            string usd = v.Valute.USD.Value.ToString();
+            string eur = v.Valute.EUR.Value.ToString();
+            string cny = v.Valute.CNY.Value.ToString();
 
             double Usd = Convert.ToDouble(usd);
             double Eur = Convert.ToDouble(eur);

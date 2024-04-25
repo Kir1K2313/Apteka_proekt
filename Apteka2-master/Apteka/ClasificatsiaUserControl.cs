@@ -34,19 +34,22 @@ namespace Apteka
             for (int i = 0; i < meduc.Count; i += 4)
             {
                 Label Namelbl = new Label();
+                Namelbl.Name = "Labellabel";
                 Namelbl.Location = new Point(x, 60);
                 Namelbl.Size = new Size(200, 30);
                 Namelbl.Font = new Font("Arial", 13);
                 Namelbl.Text = meduc[i + 1];
                 Namelbl.Tag = meduc[i];
-                Namelbl.Click += new EventHandler(meduclabel_Click);
                 Vievpanel.Controls.Add(Namelbl);
-                Label Pricelbl = new Label();
-                Pricelbl.Location = new Point(x, 360);
-                Pricelbl.Size = new Size(200, 30);
-                Pricelbl.Font = new Font("Arial", 13);
-                Pricelbl.Text = "Цена,  руб.:" + meduc[i + 3];
-                Vievpanel.Controls.Add(Pricelbl);
+
+
+                Label Pricelabel = new Label();
+                Pricelabel.Location = new Point(x, 360);
+                Pricelabel.Name = "Pricelabel";
+                Pricelabel.Size = new Size(200, 30);
+                Pricelabel.Font = new Font("Arial", 13);
+                Pricelabel.Text = "Цена,  руб.:" + meduc[i + 3];
+                Vievpanel.Controls.Add(Pricelabel);
 
                 PictureBox pb = new PictureBox();
                 try
@@ -62,7 +65,6 @@ namespace Apteka
                 Vievpanel.Controls.Add(pb);
 
                 x += 210;
-
 
             }
 

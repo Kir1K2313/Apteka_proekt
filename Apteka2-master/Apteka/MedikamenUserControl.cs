@@ -20,7 +20,7 @@ namespace Apteka
             List<string> meduc = SQLClass.myselect("Select id, name, pic, price FROM level3 WHERE id = '" + id + "'");
 
             meduclabel.Text = meduc[1];
-            Labellabel.Text = "Цена: " + meduc[3] + " руб";
+            Pricelabel.Text = meduc[3];
             try
             {
                 pictureBox1.Load("../../Картинки/" + meduc[2]);
