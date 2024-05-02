@@ -55,6 +55,7 @@
             this.дизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuEditpanel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.изменениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExchangeLabel = new System.Windows.Forms.Label();
             this.Authpanel.SuspendLayout();
             this.CopyRightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VkpictureBox)).BeginInit();
@@ -166,6 +167,7 @@
             // CopyRightpanel
             // 
             this.CopyRightpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CopyRightpanel.Controls.Add(this.ExchangeLabel);
             this.CopyRightpanel.Controls.Add(this.ValcomboBox);
             this.CopyRightpanel.Controls.Add(this.Weatherlabel);
             this.CopyRightpanel.Controls.Add(this.VkpictureBox);
@@ -184,7 +186,7 @@
             "USD",
             "EUR",
             "CNY"});
-            this.ValcomboBox.Location = new System.Drawing.Point(538, 27);
+            this.ValcomboBox.Location = new System.Drawing.Point(876, 34);
             this.ValcomboBox.Name = "ValcomboBox";
             this.ValcomboBox.Size = new System.Drawing.Size(191, 37);
             this.ValcomboBox.TabIndex = 2;
@@ -287,6 +289,15 @@
             this.изменениеToolStripMenuItem.Text = "Изменение";
             this.изменениеToolStripMenuItem.Click += new System.EventHandler(this.изменениеToolStripMenuItem_Click);
             // 
+            // ExchangeLabel
+            // 
+            this.ExchangeLabel.AutoSize = true;
+            this.ExchangeLabel.Location = new System.Drawing.Point(478, 34);
+            this.ExchangeLabel.Name = "ExchangeLabel";
+            this.ExchangeLabel.Size = new System.Drawing.Size(79, 29);
+            this.ExchangeLabel.TabIndex = 3;
+            this.ExchangeLabel.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -336,5 +347,6 @@
         public System.Windows.Forms.PictureBox VkpictureBox;
         private System.Windows.Forms.Label Weatherlabel;
         private System.Windows.Forms.ComboBox ValcomboBox;
+        private System.Windows.Forms.Label ExchangeLabel;
     }
 }

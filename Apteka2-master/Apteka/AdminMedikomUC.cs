@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,9 +37,9 @@ namespace Apteka
                 NameClassifCB.Items.Add(classif[i] + ". " + classif[i + 1] + ". " + apteka[0] + ". " + apteka[1]);
             }
 
-            List<string> medic = SQLClass.myselect("SELECT id, name, id_apteka, id_class FROM level3");
+            List<string> medic = SQLClass.myselect("SELECT id, name, id_apteka, id_class, price, link FROM level3");
             int y = 100;
-            for (int i = 0; i < medic.Count; i += 4)
+            for (int i = 0; i < medic.Count; i += 6)
             {
                 Label lbl = new Label();
                 lbl.Location = new Point(80, y);
@@ -66,8 +67,23 @@ namespace Apteka
                 lbl2.Text = classi[0];
                 Infopanel.Controls.Add(lbl2);
 
+                Label lbl_price = new Label();
+                lbl_price.Location = new Point(680, y);
+                lbl_price.Size = new Size(200, 30);
+                lbl_price.Text = medic[i + 4];
+                Infopanel.Controls.Add(lbl_price);
+
+                Button btn_price = new Button();
+                btn_price.Location = new Point(900, y);
+                btn_price.Size = new Size(100, 30);
+                btn_price.Click += new EventHandler(UpdatePrice);
+                btn_price.Tag = medic[i+5];
+                btn_price.Text = "Обновить цену";
+                Infopanel.Controls.Add(btn_price);
+                y += 35;
+
                 Button btn = new Button();
-                btn.Location = new Point(700, y);
+                btn.Location = new Point(1050, y);
                 btn.Size = new Size(100, 30);
                 btn.Click += new EventHandler(DeleteMedicClick);
                 btn.Text = "Удалить";
@@ -122,9 +138,43 @@ namespace Apteka
                 {
                     SQLClass.myUpdate("Delete FROM level3 WHERE id = '" + control.Tag + "'");
                     MessageBox.Show("Удаление прошло успешно");
-                    AdminMedikomUC_Load(sender, e);
+                   
                 }
             }
+            AdminMedikomUC_Load(sender, e);
+        }
+        public static float MedPrice(string link)
+        {
+            if(link != "")
+            {
+                //запрос
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(link);
+                //обработка
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader sr = new StreamReader(stream);
+                string sReadData = sr.ReadToEnd();
+                response.Close();
+                //получение 
+                string[] lines = sReadData.Split(new char[] { '\n' });
+                int pos = lines[4].IndexOf("moneyprice__roubles");
+                string price = lines[4].Substring(pos + 21, 3);
+                return (float)Convert.ToDouble(price);
+            }
+            else
+            {
+                return 0;
+            }
+
+
+        }
+        private void UpdatePrice(object sender, EventArgs e)
+        {
+            float price = 0;
+            Button btn = (Button)sender;
+            price = MedPrice(btn.Tag.ToString());
+            SQLClass.myUpdate("UPDATE level3 SET ")
+            AdminMedikomUC_Load(sender, e);
         }
         private void MedicpictureBox_Click(object sender, EventArgs e)
         {

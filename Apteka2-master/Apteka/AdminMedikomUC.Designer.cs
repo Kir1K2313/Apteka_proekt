@@ -43,6 +43,7 @@
             this.AddMedicbutton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.label6 = new System.Windows.Forms.Label();
             this.Infopanel.SuspendLayout();
             this.AddAptekapanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MedicpictureBox)).BeginInit();
@@ -51,6 +52,7 @@
             // Infopanel
             // 
             this.Infopanel.AutoScroll = true;
+            this.Infopanel.Controls.Add(this.label6);
             this.Infopanel.Controls.Add(this.label1);
             this.Infopanel.Controls.Add(this.label4);
             this.Infopanel.Controls.Add(this.label3);
@@ -58,13 +60,13 @@
             this.Infopanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Infopanel.Location = new System.Drawing.Point(0, 0);
             this.Infopanel.Name = "Infopanel";
-            this.Infopanel.Size = new System.Drawing.Size(965, 196);
+            this.Infopanel.Size = new System.Drawing.Size(1110, 196);
             this.Infopanel.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(578, 52);
+            this.label1.Location = new System.Drawing.Point(461, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 29);
             this.label1.TabIndex = 4;
@@ -73,7 +75,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(343, 52);
+            this.label4.Location = new System.Drawing.Point(280, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 29);
             this.label4.TabIndex = 3;
@@ -109,7 +111,7 @@
             this.AddAptekapanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddAptekapanel.Location = new System.Drawing.Point(0, 196);
             this.AddAptekapanel.Name = "AddAptekapanel";
-            this.AddAptekapanel.Size = new System.Drawing.Size(965, 331);
+            this.AddAptekapanel.Size = new System.Drawing.Size(1110, 331);
             this.AddAptekapanel.TabIndex = 4;
             // 
             // NamemedicTB
@@ -186,6 +188,15 @@
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(741, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 29);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Цена";
+            // 
             // AdminMedikomUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -195,7 +206,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AdminMedikomUC";
-            this.Size = new System.Drawing.Size(965, 527);
+            this.Size = new System.Drawing.Size(1110, 527);
             this.Load += new System.EventHandler(this.AdminMedikomUC_Load);
             this.Infopanel.ResumeLayout(false);
             this.Infopanel.PerformLayout();
@@ -223,5 +234,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.Label label6;
     }
 }

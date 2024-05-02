@@ -42,7 +42,8 @@ namespace Apteka
             Weatherlabel.Text = "Температура " + APIClass.temper + " C";
             APIClass.Vals();
             ValcomboBox.SelectedIndex = 0;
-
+            ExchangeLabel.Text = "Курс: $ " + APIClass.vals["USD"] + ",  € " + APIClass.vals["EUR"] + ",  ¥ " + APIClass.vals["CNY"];
+           // APIClass.MedPrice();
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -327,19 +328,23 @@ namespace Apteka
             NewVal = ValcomboBox.Text;
 
             double coef = APIClass.vals[OldVal] / APIClass.vals[NewVal];
-            var pricelbl = Controls.Find("Pricelabel", true);
-            foreach(Label lbl in pricelbl)
+
+            var pricelbl = Controls.Find("PriceLabel", true);
+
+            foreach (Label lbl in pricelbl)
             {
                 double price = Convert.ToDouble(lbl.Text);
                 price = Math.Round((price * coef), 2);
                 lbl.Text = price.ToString();
             }
-            var lbl2 = Controls.Find("Labellabel", true);
-            foreach (Label lbl in lbl2) 
+
+            var lbllbl = Controls.Find("LabelLabel", true);
+
+            foreach (Label lbl in lbllbl)
             {
                 if (NewVal == "RUB")
                     lbl.Text = "Цена, руб.: ";
-                else  if (NewVal == "USD")
+                else if (NewVal == "USD")
                     lbl.Text = "Цена, $";
                 else if (NewVal == "EUR")
                     lbl.Text = "Цена, €";
